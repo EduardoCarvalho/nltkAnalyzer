@@ -1,0 +1,124 @@
+Enterprise Systems Modeling: the ERP5 Development
+Process
+Rafael Manhaes Monnerat Rogerio Atem de Carvalho Renato de Campos
+CEFET Campos CEFET Campos Unesp Bauru
+R. Dr. Siqueira, 273, Campos/RJ R. Dr. Siqueira, 273, Campos/RJ Brazil, 28030-130 Brazil, 28030-130 Av. Eng. Luiz E. C. Coube, 14-01,
+                                                                                                   Bauru/SP, Brazil, 17033-360
+55-22-2726-2843 55-22-2726-2815 55-14-3103-6000
+monnerat@cefetcampos.br ratem@cefetcampos.br rcampos@feb.unesp.br
+1062
+1. Identification: identifies the particular enterprise entity in
+terms of its domain and environment.
+2. Concept: conceptualizes an entity’s mission, vision, values,
+strategies, and objectives.
+1063
+3. Requirements: comprise a set of human, process, and
+technology oriented aspects and activities needed to describe
+the operational requirements of the enterprise.
+4. Design: models the enterprise entity and helps to understand
+the system functionalities.
+5. Implementation: the design is transformed into real
+components. After tested and approved the system is released
+into operation.
+6. Operation: is the actual use of the system, and includes user
+feedback that can drive to a new entity life cycle.
+7. Decommission: represents the disposal of parts of the whole
+entity, after its successful use.
+1. Objectives Modeling: define the strategic planning of the
+organization.
+2. Process and Activities Modeling: define the behavioral and
+functional aspects of the organization. These activities are
+directly related to the Business Modeling discipline.
+1064
+3. Resources Modeling: describes the human, informational and
+technological resources.
+4. Information Modeling: describe, in high level of abstraction,
+the information handled by the organization.
+5. Organization Modeling: describe the structure, in
+departments for instance, of the organization.
+1. System Requirements Definition: should provide a document
+with basic requirements for the instance. These requirements
+are a composition of features identified by the Process and
+Activities Modeling phases of the Enterprise Modeling
+workflow with some more detailed system’s functionalities that
+can be identified at this point and are necessary to the
+consolidation of the business process information needs.
+2. Use Case Identification: Use Cases are identified from the
+activities of an Activity Diagram that represents a specific
+business process. This identification complements the
+requirements definition through the definition of the basic
+system’s architecture.
+3. Basic Iteration Planning: although the detailed aspects of the
+system will be known only afterwards, it is necessary to define
+a basic iteration execution plan. This plan establish priorities
+to use cases according to their criticality, defined by the
+aggregation of the following criteria: being central to the
+system architecture, or representing primary business process,
+high risk functions, high complexity, high aggregated value for
+the client, and non-dominated or developed technology.
+Figure 5. Analysis Workflow.
+Figure 4. Requirements Workflow.
+1065
+2. Design Statechart Diagram: states names correspond to the
+state of the system in a particular moment. From the UC, verbs
+in the actions column identify state transitions; in the reaction
+column verbs identify states internal activities. Figure 7 shows
+an example of a single UC row with a correspondingly
+transition in a statechart diagram.
+3. Fill WARC Table: WOOM uses a modeling artifact, named
+WARC Table (Workflow – Action/Reaction – Responsible –
+Collaborators), which is used to associate structure to
+behavior, guaranteeing encapsulation in object-oriented
+design. For the process here proposed, a different use of the
+WARC table is considered: a state transition is associated for
+each action, and a state internal action to each reaction –
+forming the Responsible column of the table. The objects that
+are manipulated by the transition or internal action are listed in
+the Collaborators column (the objects that participates on the
+UC were already identified in the Analysis phase). Table 2
+shows the rows that represent in the WARC Table the UC step
+exemplified on Figure 7.
+4. Write Contracts: This final step takes care of writing a contract
+[15] for each action and reaction. Contracts will determine
+what each transition/internal activity must do to collaborate to
+the workflow correct realization. For describing operation’s
+responsibilities pseudo-code, proto-code, plain text, Object
+Constraint Language (OCL) and Activity Diagrams can be
+used. Even more complex contract approaches may be used,
+like extending the Python interpreter to directly support the
+Design By Contracts method [16].
+Figure 7. Example transformation from a Use Case row to a
+statechart diagram’s transition and state in WOOM.
+Figure 6. Design Workflow.
+1. Use Case Detail – Reactions: the reactions correspond to the
+second column of the UC, they define what the system is
+suppose to do according to an actor’s action.
+1066
+5. Integration Testing: the Use Case is tested in conjunction with
+others to check consistency among functionalities that must
+work integrated.
+WARC Tables: are used to check the consistency between
+Class and Statechart Diagrams.
+Class Diagrams: are used to generate the structure (portal
+types). From these diagrams, Python classes, their relational
+mapping and basic GUI for object maintenance (create,
+destroy, getters and setters) are generated.
+Statechart Diagrams: are used to generate behavior
+(workflows).
+Figure 8. Implementation Workflow.
+1. Structure and Behavior Generation: using a code generation
+tool – ERP5 Generator, the portal type and related workflow
+are automatically generated from a XMI file.
+2. Prepare Test Documents: these documents are instances of
+each scenario of each Use Case with specific values. These
+documents can be written in any language that can be
+understood by programmers and Quality Assurance personnel.
+3. Code Completion: represents the implementation in source
+code of the algorithms of the workflow’s transactions and
+internal activities.
+4. Unit Testing: is run by a testing script, which automates the
+steps described in the Test Documents. This activity is
+supported by the ERP5 testing framework.
+1067
+1068
+
